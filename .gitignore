@@ -5,6 +5,7 @@
 /#recycle
 /web_images
 /redirect_to_https
+/.DS_Store
 
 ### Django ###
 *.log
