@@ -5,6 +5,8 @@
 /#recycle
 /web_images
 /redirect_to_https
+index_.html
+index_원본.html
 
 ### Django ###
 *.log
