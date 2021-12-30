@@ -5,7 +5,12 @@
 /#recycle
 /web_images
 /redirect_to_https
+<<<<<<< HEAD
 /.DS_Store
+=======
+index_.html
+index_원본.html
+>>>>>>> dc74346d1eb47c043fb999c764bf1624f6a16db5
 
 ### Django ###
 *.log
