@@ -8,6 +8,7 @@
 /.DS_Store
 index_.html
 index_원본.html
+_config.yml
 
 ### Django ###
 *.log
