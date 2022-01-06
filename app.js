@@ -1,12 +1,4 @@
 //공통
-function GA() {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-YS9YKWL86E');
-}
-
 function Tawk_API() {
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
