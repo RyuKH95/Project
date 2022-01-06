@@ -21,40 +21,55 @@ function Tawk_API() {
 
 //1.html
 function reference() {
-    document.write('<ul>');
-    document.write('참고')
-    const referenceList = {}
-    referenceList['생활코딩']="https://opentutorials.org/course/1";
-    referenceList['노마드코더']="https://nomadcoders.co/";
-    referenceList['unsplash']="https://unsplash.com/";
-    for(const key in referenceList) {
-        document.write('<li>');
-        document.write(key, ' - <a href="', referenceList[key],'" target="_blank">', referenceList[key], '</a>');
-        document.write('</li>');
+    const referenceList = {
+        "생활코딩" : "https://opentutorials.org/course/1" //첫번째방법
     }
-    document.write('</ul');
+    referenceList['노마드코더']="https://nomadcoders.co/"; //두번째방법
+    referenceList.unsplash="https://unsplash.com/"; //세번째방법
+    
+    referenceList.showAll = function() {
+        for(const key in referenceList) {
+            if(key === 'showAll')
+                continue;
+            else
+                document.write('<li>', key, ' - <a href="', referenceList.key, '" target="_blank">', referenceList[key], '</a></li>');
+        }
+    }
+
+    referenceList.showAll();
 }
 
 
 // 3.html
-function Toggle(self) {
-    const target = document.querySelector('body').style;
-    const links = document.querySelectorAll('a');
-    if(self.value=='Day') {
-        target.backgroundColor='white';
-        target.color='black';
-        self.value='Night';
-        setColor(links, 'blue');
-    }
-    else {
-        target.backgroundColor='black';
-        target.color='white';
-        self.value='Day';
-        setColor(links, 'powderblue');
+const Body = {
+    setColor: function(color) {
+        document.querySelector('body').style.color = color;
+    },
+    setBackgroundColor: function(color) {
+        document.querySelector('body').style.backgroundColor = color;
     }
 }
-function setColor(links, color) {
-    for(let i=0; i<links.length; i++) {
-        links[i].style.color=color;
+const Links = {
+    setColor: function(color) {
+        const links = document.querySelectorAll('a');
+        for(let i=0; i<links.length; i++) {
+            links[i].style.color=color;
+        }
+    }
+}
+function Toggle(self) {
+    if(self.value=='Day') {
+        Body.setBackgroundColor('white');
+        Body.setColor('black');
+        self.value='Night';
+
+        Links.setColor('blue');
+    }
+    else {
+        Body.setBackgroundColor('black');
+        Body.setColor('white');
+        self.value='Day';
+
+        Links.setColor('powderblue');
     }
 }

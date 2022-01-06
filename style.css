@@ -1,3 +1,10 @@
+#mainBody {
+    background-image: url("bg.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%; /* cover */
+    color: white;
+}
 ol {
     border-right: 1px solid gray;
     width: 100px;
