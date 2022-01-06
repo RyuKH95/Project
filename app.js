@@ -1,3 +1,25 @@
+//공통
+function GA() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YS9YKWL86E');
+}
+
+function Tawk_API() {
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/61d28d92c82c976b71c47a83/1fof7i1cs';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+}
+
+//1.html
 function reference() {
     document.write('<ul>');
     document.write('참고')
@@ -13,36 +35,26 @@ function reference() {
     document.write('</ul');
 }
 
-function Tawk_API() {
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/61d28d92c82c976b71c47a83/1fof7i1cs';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-}
 
 // 3.html
-function Toggle(t) {
+function Toggle(self) {
     const target = document.querySelector('body').style;
     const links = document.querySelectorAll('a');
-    if(t.value=='Day') {
+    if(self.value=='Day') {
         target.backgroundColor='white';
         target.color='black';
-        t.value='Night';
-        for(let i=0; i<links.length; i++) {
-            links[i].style.color='blue';
-        }
+        self.value='Night';
+        setColor(links, 'blue');
     }
     else {
         target.backgroundColor='black';
         target.color='white';
-        t.value='Day';
-        for(let i=0; i<links.length; i++) {
-            links[i].style.color='powderblue';
-        }
+        self.value='Day';
+        setColor(links, 'powderblue');
+    }
+}
+function setColor(links, color) {
+    for(let i=0; i<links.length; i++) {
+        links[i].style.color=color;
     }
 }

@@ -5,14 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YS9YKWL86E"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-YS9YKWL86E');
-    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YS9YKWL86E">GA();</script>
+    <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>rgh.synology.me</title>
 </head>
@@ -27,14 +21,15 @@
             <a href="https://rgh.synology.me:5001" target="_blank">DSM 비밀번호 찾으러가기</a>
         </div>
     </div>
-    <h1><a href="index.html">WEB</a></h1>
+    <h1><a href="web.html">WEB</a></h1>
+    <h2><a href="index.html">Main</a></h2>
     <div id="grid">
     <div>
-    <ol>
-        <li><a href="1.html">HTML</a></li>
-        <li><a href="2.html">CSS</a></li>
-        <li><a href="3.html">JavaScript</a></li>
-    </ol>
+        <ol>
+            <li><a href="1.html">HTML</a></li>
+            <li><a href="2.html">CSS</a></li>
+            <li><a href="3.html">JavaScript</a></li>
+        </ol>
     </div>
     <div>
     <h2>CSS</h2>
@@ -51,16 +46,8 @@
     </div>
     <!-- <script src="app.js"></script> -->
     <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/61d28d92c82c976b71c47a83/1fof7i1cs';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
+    <script>
+        Tawk_API();
     </script>
     <!--End of Tawk.to Script-->
 </body>
