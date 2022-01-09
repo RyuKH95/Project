@@ -36,15 +36,9 @@
     <div id="grid">
     <div>
         <ol>
-            <li><a href="#" onclick="
-                document.querySelector('article').innerHTML = '<h2>HTML</h2>HTML is'
-                ">HTML</a></li>
-            <li><a href="#" onclick="
-                document.querySelector('article').innerHTML = '<h2>CSS</h2>CSS is'
-                ">CSS</a></li>
-            <li><a href="#" onclick="
-                document.querySelector('article').innerHTML = '<h2>JavaScript</h2>JavaScript is'
-                ">JavaScript</a></li>
+            <li><a href="#" onclick="fetchPage('html')">HTML</a></li>
+            <li><a href="#" onclick="fetchPage('CSS')">CSS</a></li>
+            <li><a href="#" onclick="fetchPage('JavaScript')">JavaScript</a></li>
         </ol>
     </div>
     <article>
@@ -52,6 +46,13 @@
     </article>
     </div>
     <script>
+        function fetchPage(name) {
+            fetch(name).then(function(response) {
+                response.text().then(function(text) {
+                    document.querySelector('article').innerHTML = text;
+                })
+            })
+        }
         // Start of Tawk.to Script
         Tawk_API();
         // End of Tawk.to Script
