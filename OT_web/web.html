@@ -35,10 +35,8 @@
     <input id="Night_day" type="button" value="Night" onclick="Toggle(this)">
     <div id="grid">
     <div>
-        <ol>
-            <li><a href="#" onclick="fetchPage('html')">HTML</a></li>
-            <li><a href="#" onclick="fetchPage('css')">CSS</a></li>
-            <li><a href="#" onclick="fetchPage('JavaScript')">JavaScript</a></li>
+        <ol id="nav">
+            
         </ol>
     </div>
     <article>
@@ -53,6 +51,17 @@
                 })
             })
         }
+        if(location.hash) {
+            fetchPage(location.hash.substr(2));
+        }
+        else {
+            fetchPage('welcome');
+        }
+        fetch('list').then(function(response) {
+            response.text().then(function(text) {
+                document.querySelector('#nav').innerHTML = text;
+            })
+        });
         // Start of Tawk.to Script
         Tawk_API();
         // End of Tawk.to Script
