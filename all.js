@@ -23,7 +23,7 @@ function reference() {
             if(key === 'showAll')
                 continue;
             else
-                document.write('<li>', key, ' - <a href="', referenceList.key, '" target="_blank">', referenceList[key], '</a></li>');
+                document.write('<li>', key, ' - <a href="', referenceList[key], '" target="_blank">', referenceList[key], '</a></li>');
         }
     }
 
