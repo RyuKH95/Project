@@ -37,15 +37,18 @@ const app = http.createServer(function (request, response) {
         response.end(template);
       });
     } else {
-      fs.readdir('./data', function (err, filelist) {
+      fs.readdir("./data", function (err, filelist) {
         let list = `<ol>`;
-        for(let i = 0; i < filelist.length; i++) {
-          list+=`<li><a href="/?id=${filelist[i]}">${filelist[i]}</a></li>`
+        for (let i = 0; i < filelist.length; i++) {
+          list += `<li><a href="/?id=${filelist[i]}">${filelist[i]}</a></li>`;
         }
         list += `</ol>`;
-      fs.readFile(`data/${queryData.id}`, "utf8", function (err, description) {
-        let title = queryData.id;
-        const template = `
+        fs.readFile(
+          `data/${queryData.id}`,
+          "utf8",
+          function (err, description) {
+            let title = queryData.id;
+            const template = `
       <!doctype html>
       <html>
       <head>
@@ -60,11 +63,12 @@ const app = http.createServer(function (request, response) {
       </body>
       </html>
       `;
-        response.writeHead(200);
-        response.end(template);
+            response.writeHead(200);
+            response.end(template);
+          }
+        );
       });
     }
-    )}
   } else {
     response.writeHead(404);
     response.end("Not found");
