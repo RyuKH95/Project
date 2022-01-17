@@ -38,9 +38,7 @@ const app = http.createServer(function (request, response) {
       fs.readdir("./data", function (err, filelist) {
         const title = "Welcome";
         const description = "Hello, Node.js";
-        
         const list = templateList(filelist);
-
         const template = templateHTML(title, list, `<h2>${title}</h2>
         <p>${description}</p>`);
         response.writeHead(200);
