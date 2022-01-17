@@ -9,6 +9,7 @@
 index_.html
 index_원본.html
 _config.yml
+/OT_web/nodejs/.DS_Store
 
 ### Django ###
 *.log
